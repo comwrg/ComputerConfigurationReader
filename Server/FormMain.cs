@@ -15,5 +15,31 @@ namespace Server
         {
             InitializeComponent();
         }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            Protocol p = new Protocol();
+            p.Start((ip, msg) =>
+            {
+                var list = new List<string>(msg.Split('|'));
+                list.Insert(0, ip);
+                ListView_config_Add(list);
+            });
+        }
+
+        private void ListView_config_Add(List<string> list)
+        {
+            int count = listView_config.Items.Count;
+            ListViewItem item = new ListViewItem();
+            item.SubItems[0].Text = (count + 1).ToString();
+            foreach (var s in list)
+            {
+                item.SubItems.Add(s);
+            }
+            this.Invoke(new Action(() =>
+            {
+                listView_config.Items.Add(item);
+            }));
+        }
     }
 }
