@@ -9,15 +9,14 @@ namespace Server
 {
     public class Protocol
     {
-        private Action<string> _callback;
+        private Action<string, string> _callback;
         private TcpListener _tcpListener;
-        public void Start(Action<string> callback, int port = 8888)
+        public void Start(Action<string, string> callback, int port = 8888)
         {
             _callback = callback;
             _tcpListener = new TcpListener(IPAddress.Any, port);
             _tcpListener.Start();
-            Thread thread = new Thread(StartThread);
-            thread.IsBackground = true;
+            Thread thread = new Thread(StartThread) {IsBackground = true};
             thread.Start();
         }
 
@@ -26,8 +25,7 @@ namespace Server
             while (true)
             {
                 TcpClient client = _tcpListener.AcceptTcpClient();
-                Thread thread = new Thread(ClientConnent);
-                thread.IsBackground = true;
+                Thread thread = new Thread(ClientConnent) {IsBackground = true};
                 thread.Start(client);
             }
         }
@@ -38,7 +36,7 @@ namespace Server
             var bytes = new byte[1024];
             var i = stream.Read(bytes, 0, bytes.Length);
             var msg = Encoding.UTF8.GetString(bytes, 0, i);
-            _callback(msg);
+            _callback(client.Client.RemoteEndPoint.ToString(), msg);
         }
     }
 }
