@@ -23,13 +23,23 @@ namespace Client
             list.Add(ComputerConfiguationReader.GetCpuName());
             list.Add(ComputerConfiguationReader.GetBaseboard());
             list.Add(ComputerConfiguationReader.GetBiosVersion());
-            list.Add(ComputerConfiguationReader.GetDisplayName());
-            list.AddRange(ComputerConfiguationReader.GetMemoryInfo());
-
+            var displayNameList = ComputerConfiguationReader.GetDisplayName();
+            list.AddRange(Format(displayNameList));
+            var memoryInfoList = ComputerConfiguationReader.GetMemoryInfo();
+            list.AddRange(Format(memoryInfoList));
             string s = String.Join("|", list.ToArray());
             Protocol p = new Protocol(File.ReadAllText("ip.txt"), 8888);
             p.Send(s);
             Dispose();
+        }
+
+        private List<string> Format(List<string> list)
+        {
+            while (list.Count < 2)
+            {
+                list.Add("");
+            }
+            return list;
         }
     }
 }

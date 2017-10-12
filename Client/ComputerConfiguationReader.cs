@@ -41,15 +41,16 @@ namespace Client
             return String.Empty;
         }
 
-        public static string GetDisplayName()
+        public static List<string> GetDisplayName()
         {
             var mos = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DisplayConfiguration");
+            List<string> list = new List<string>();
             foreach (var o in mos.Get())
             {
                 var displayName = o["Caption"].ToString();
-                return displayName;
+                list.Add(displayName);
             }
-            return String.Empty;
+            return list;
         }
 
         public static List<string> GetMemoryInfo()
