@@ -37,6 +37,7 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView_config
@@ -49,7 +50,8 @@
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7,
-            this.columnHeader8});
+            this.columnHeader8,
+            this.columnHeader9});
             this.listView_config.FullRowSelect = true;
             this.listView_config.GridLines = true;
             this.listView_config.Location = new System.Drawing.Point(12, 12);
@@ -85,18 +87,23 @@
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "显卡";
+            this.columnHeader6.Text = "显卡1";
             this.columnHeader6.Width = 100;
             // 
             // columnHeader7
             // 
-            this.columnHeader7.Text = "内存条1";
+            this.columnHeader7.Text = "显卡2";
             this.columnHeader7.Width = 100;
             // 
             // columnHeader8
             // 
-            this.columnHeader8.Text = "内存条2";
+            this.columnHeader8.Text = "内存条1";
             this.columnHeader8.Width = 100;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "内存条2";
+            this.columnHeader9.Width = 100;
             // 
             // FormMain
             // 
@@ -121,6 +128,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
     }
 }
 
