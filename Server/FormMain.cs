@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Configuration;
 using System.Text;
 using System.Windows.Forms;
 
@@ -40,6 +41,16 @@ namespace Server
             {
                 listView_config.Items.Add(item);
             }));
+        }
+
+        private void btn_saveAsExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "xlsx|*.xlsx";
+            sfd.DefaultExt = "xlsx";
+            if ( sfd.ShowDialog() != DialogResult.OK)
+                return;
+            ToExcel.ListView2Excel(listView_config, sfd.FileName);
         }
     }
 }

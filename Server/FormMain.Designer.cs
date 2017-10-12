@@ -38,6 +38,7 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btn_saveAsExcel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView_config
@@ -64,16 +65,17 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "序号";
+            this.columnHeader1.Width = 100;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "IP地址";
-            this.columnHeader2.Width = 100;
+            this.columnHeader2.Width = 300;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "CPU";
-            this.columnHeader3.Width = 300;
+            this.columnHeader3.Width = 100;
             // 
             // columnHeader4
             // 
@@ -105,11 +107,22 @@
             this.columnHeader9.Text = "内存条2";
             this.columnHeader9.Width = 100;
             // 
+            // btn_saveAsExcel
+            // 
+            this.btn_saveAsExcel.Location = new System.Drawing.Point(1664, 788);
+            this.btn_saveAsExcel.Name = "btn_saveAsExcel";
+            this.btn_saveAsExcel.Size = new System.Drawing.Size(75, 23);
+            this.btn_saveAsExcel.TabIndex = 1;
+            this.btn_saveAsExcel.Text = "导出";
+            this.btn_saveAsExcel.UseVisualStyleBackColor = true;
+            this.btn_saveAsExcel.Click += new System.EventHandler(this.btn_saveAsExcel_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1751, 794);
+            this.ClientSize = new System.Drawing.Size(1751, 814);
+            this.Controls.Add(this.btn_saveAsExcel);
             this.Controls.Add(this.listView_config);
             this.Name = "FormMain";
             this.Load += new System.EventHandler(this.FormMain_Load);
@@ -129,6 +142,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.Button btn_saveAsExcel;
     }
 }
 
