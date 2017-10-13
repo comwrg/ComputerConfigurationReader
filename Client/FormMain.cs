@@ -26,7 +26,7 @@ namespace Client
                 list.Add(ComputerConfiguationReader.GetCpuName());
                 list.Add(ComputerConfiguationReader.GetBaseboard());
                 list.Add(ComputerConfiguationReader.GetBiosVersion());
-                var displayNameList = ComputerConfiguationReader.GetDisplayName();
+                var displayNameList = ComputerConfiguationReader.GetVideoName();
                 list.AddRange(Format(displayNameList));
                 var memoryInfoList = ComputerConfiguationReader.GetMemoryInfo();
                 list.AddRange(Format(memoryInfoList));

@@ -41,7 +41,7 @@ namespace Client
             return String.Empty;
         }
 
-        public static List<string> GetDisplayName()
+        public static List<string> GetVideoName()
         {
             var mos = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_VideoController");
             List<string> list = new List<string>();
