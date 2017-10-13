@@ -43,7 +43,7 @@ namespace Client
 
         public static List<string> GetDisplayName()
         {
-            var mos = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DisplayConfiguration");
+            var mos = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_VideoController");
             List<string> list = new List<string>();
             foreach (var o in mos.Get())
             {
